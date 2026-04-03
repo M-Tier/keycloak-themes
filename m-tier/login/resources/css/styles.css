@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --surface: #0d1117;
+    --surface-card: #161b22;
+    --surface-border: #30363d;
+    --content: #e6edf3;
+    --content-muted: #8b949e;
+}
+
+/* Base */
+body {
+    background-color: var(--surface) !important;
+    font-family: 'Inter', sans-serif !important;
+    color: var(--content) !important;
+}
+
+/* Grid background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--surface-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--surface-border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Login container */
+#kc-header {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+#kc-header-wrapper {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 1.25rem !important;
+    color: var(--content) !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+#kc-header-wrapper::before {
+    content: '// ';
+    color: var(--content-muted);
+}
+
+/* Login card */
+#kc-content-wrapper,
+.card-pf {
+    background-color: var(--surface-card) !important;
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: none !important;
+    padding: 2rem !important;
+    position: relative;
+    z-index: 1;
+}
+
+#kc-form-login,
+#kc-content {
+    position: relative;
+    z-index: 1;
+}
+
+.login-pf body,
+.login-pf {
+    background-color: var(--surface) !important;
+    background-image: none !important;
+}
+
+/* Remove default Keycloak background */
+.login-pf .container {
+    background: none !important;
+}
+
+/* Form labels */
+.login-pf .control-label,
+.login-pf label {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: var(--content-muted) !important;
+    font-weight: 400 !important;
+}
+
+/* Inputs */
+.login-pf .form-control,
+.login-pf input[type="text"],
+.login-pf input[type="password"] {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 0.5rem !important;
+    color: var(--content) !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 0.625rem 0.75rem !important;
+    font-size: 0.875rem !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    height: auto !important;
+}
+
+.login-pf .form-control:focus,
+.login-pf input[type="text"]:focus,
+.login-pf input[type="password"]:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent) !important;
+    outline: none !important;
+}
+
+/* Primary button */
+.login-pf .btn-primary,
+.login-pf input[type="submit"],
+#kc-login {
+    background-color: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+    border-radius: 0.5rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    padding: 0.625rem 1.25rem !important;
+    color: #fff !important;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    width: 100%;
+}
+
+.login-pf .btn-primary:hover,
+.login-pf input[type="submit"]:hover,
+#kc-login:hover {
+    background-color: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 25%, transparent) !important;
+}
+
+/* Links */
+.login-pf a,
+.login-pf .kc-social-provider-name {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.login-pf a:hover {
+    color: var(--accent-hover) !important;
+}
+
+/* Alerts and messages */
+.login-pf .alert {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 0.5rem !important;
+    color: var(--content) !important;
+}
+
+.login-pf .alert-error,
+.login-pf .alert-danger {
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+.login-pf .alert-warning {
+    border-color: #eab308 !important;
+    color: #eab308 !important;
+}
+
+.login-pf .alert-success {
+    border-color: #22c55e !important;
+    color: #22c55e !important;
+}
+
+/* Remember me checkbox */
+.login-pf .checkbox label,
+.login-pf #rememberMe {
+    color: var(--content-muted) !important;
+    font-size: 0.8125rem !important;
+}
+
+/* Social login buttons */
+#kc-social-providers {
+    margin-top: 1.5rem !important;
+}
+
+#kc-social-providers ul {
+    padding: 0 !important;
+}
+
+.login-pf .zocial {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 0.5rem !important;
+    color: var(--content) !important;
+    font-family: 'Inter', sans-serif !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+    padding: 0.625rem 1rem !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.login-pf .zocial:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 25%, transparent) !important;
+}
+
+/* Footer / info links */
+#kc-info-wrapper {
+    color: var(--content-muted) !important;
+    font-size: 0.8125rem !important;
+}
+
+/* Separator */
+#kc-form-options,
+.login-pf .separator {
+    color: var(--content-muted) !important;
+    border-color: var(--surface-border) !important;
+}
+
+/* Locale dropdown */
+#kc-locale ul {
+    background-color: var(--surface-card) !important;
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 0.5rem !important;
+}
+
+#kc-locale ul li a {
+    color: var(--content) !important;
+}
+
+#kc-locale ul li a:hover {
+    background-color: var(--surface) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--surface-border);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Logo */
+.kc-logo-text,
+#kc-logo-wrapper {
+    display: none !important;
+}
