@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --surface: #0d1117;
+    --surface-card: #161b22;
+    --surface-border: #30363d;
+    --content: #e6edf3;
+    --content-muted: #8b949e;
+    --panel-width: 46%;
+}
+
+body.login-pf,
+body {
+    background: var(--surface) !important;
+    font-family: 'Inter', sans-serif !important;
+    color: var(--content) !important;
+    margin: 0 !important;
+}
+
+/* Two-panel layout: the header block becomes the branded left panel and the
+   card becomes the form panel on the right. */
+.login-pf-page {
+    display: grid;
+    grid-template-columns: var(--panel-width) 1fr;
+    min-height: 100vh;
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Left panel */
+#kc-header {
+    grid-column: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3.5rem !important;
+    margin: 0 !important;
+    color: var(--content);
+    background-color: #0b111d;
+    background-repeat: no-repeat;
+    background-image:
+        linear-gradient(45deg, transparent 49.6%, rgba(59, 130, 246, 0.20) 50%),
+        linear-gradient(-45deg, transparent 49.6%, rgba(59, 130, 246, 0.13) 50%),
+        linear-gradient(135deg, transparent 49.6%, rgba(96, 165, 250, 0.10) 50%),
+        linear-gradient(45deg, transparent 49.6%, rgba(59, 130, 246, 0.07) 50%),
+        linear-gradient(-45deg, transparent 49.6%, rgba(230, 237, 243, 0.05) 50%),
+        linear-gradient(160deg, #0d1117 0%, #101c31 58%, #0b111d 100%);
+    background-size:
+        340px 340px,
+        220px 220px,
+        460px 460px,
+        150px 150px,
+        260px 260px,
+        100% 100%;
+    background-position:
+        right -90px top -60px,
+        left -70px bottom 22%,
+        right -160px bottom -180px,
+        left 12% top 14%,
+        right 18% bottom 8%,
+        center;
+}
+
+#kc-header::before {
+    content: '';
+    position: absolute;
+    top: 3.5rem;
+    left: 3.5rem;
+    width: 46px;
+    height: 46px;
+    background-image: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+}
+
+#kc-header::after {
+    content: 'taron.tech';
+    position: absolute;
+    left: 3.5rem;
+    bottom: 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--content-muted);
+}
+
+/* Realm display name doubles as the panel headline. */
+#kc-header-wrapper {
+    position: relative;
+    padding: 0 !important;
+    font-size: 2.75rem !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--content) !important;
+    text-transform: none !important;
+    white-space: normal !important;
+}
+
+#kc-header-wrapper::after {
+    content: 'Sign in to continue.';
+    display: block;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--content-muted);
+}
+
+/* Right panel */
+.card-pf {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 4rem clamp(2rem, 6vw, 5.5rem) !important;
+    background: var(--surface-card) !important;
+    border: none !important;
+    border-left: 1px solid var(--surface-border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+#kc-content,
+#kc-content-wrapper,
+#kc-form,
+#kc-form-wrapper,
+.login-pf-header {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.login-pf-header {
+    margin-bottom: 2.5rem !important;
+}
+
+#kc-page-title {
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    color: var(--content) !important;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+/* Form fields as underlined inputs */
+.form-group {
+    margin-bottom: 1.75rem !important;
+}
+
+.pf-c-form__label,
+.pf-c-form__label-text,
+label {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--content-muted) !important;
+}
+
+input.pf-c-form-control,
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+    width: 100% !important;
+    padding: 0.7rem 0.25rem !important;
+    background: transparent !important;
+    color: var(--content) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--surface-border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-size: 1rem !important;
+    transition: border-color 0.15s ease;
+}
+
+input.pf-c-form-control:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus {
+    outline: none !important;
+    border-bottom-color: var(--accent) !important;
+}
+
+/* The underline lives on the group so input and toggle share one line. */
+.pf-c-input-group {
+    display: flex !important;
+    align-items: center !important;
+    background: transparent !important;
+    border-bottom: 1px solid var(--surface-border) !important;
+    transition: border-color 0.15s ease;
+}
+
+.pf-c-input-group:focus-within {
+    border-bottom-color: var(--accent) !important;
+}
+
+.pf-c-input-group input.pf-c-form-control {
+    flex: 1 1 auto;
+    width: auto !important;
+    border-bottom: none !important;
+}
+
+.pf-c-input-group .pf-c-button.pf-m-control,
+button[data-password-toggle] {
+    padding: 0.7rem 0.5rem !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: var(--content-muted) !important;
+    box-shadow: none !important;
+}
+
+.pf-c-input-group .pf-c-button.pf-m-control::after,
+button[data-password-toggle]::after {
+    display: none !important;
+    border: none !important;
+}
+
+.pf-c-input-group .pf-c-button.pf-m-control:hover,
+button[data-password-toggle]:hover {
+    color: var(--content) !important;
+}
+
+/* Submit button */
+#kc-form-buttons {
+    margin-top: 2.25rem !important;
+}
+
+input#kc-login,
+.pf-c-button.pf-m-primary {
+    width: 100% !important;
+    padding: 0.85rem 1.5rem !important;
+    background: linear-gradient(120deg, var(--accent) 0%, #6366f1 100%) !important;
+    border: none !important;
+    border-radius: 2px !important;
+    color: #ffffff !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+input#kc-login:hover,
+.pf-c-button.pf-m-primary:hover {
+    filter: brightness(1.12);
+}
+
+/* Options row and links */
+#kc-form-options,
+.login-pf-settings {
+    font-size: 0.85rem !important;
+    color: var(--content-muted) !important;
+}
+
+a {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: var(--accent-hover) !important;
+    text-decoration: underline !important;
+}
+
+/* Alerts */
+.alert,
+.pf-c-alert {
+    background: rgba(59, 130, 246, 0.08) !important;
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 2px !important;
+    color: var(--content) !important;
+}
+
+.alert-error,
+.pf-m-danger {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.45) !important;
+}
+
+@media (max-width: 900px) {
+    .login-pf-page {
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+    }
+
+    #kc-header {
+        grid-column: 1;
+        min-height: 260px;
+        padding: 5.5rem 2rem 3rem !important;
+        background-size:
+            200px 200px,
+            140px 140px,
+            260px 260px,
+            90px 90px,
+            150px 150px,
+            100% 100%;
+    }
+
+    #kc-header::before {
+        top: 2rem;
+        left: 2rem;
+    }
+
+    #kc-header::after {
+        left: 2rem;
+        bottom: 1.25rem;
+    }
+
+    #kc-header-wrapper {
+        font-size: 2rem !important;
+    }
+
+    .card-pf {
+        grid-column: 1;
+        padding: 3rem 1.75rem !important;
+    }
+}

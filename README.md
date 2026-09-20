@@ -4,12 +4,27 @@ These are the themes I am using in my Homelab Keycloak. The design is intended t
 
 Feel free to re-use or fork this repository to style up your own Keycloak!
 
-## Preview
+## Themes
 
-- Dark background with subtle grid pattern
-- Blue accent (`#3b82f6`) for interactive elements
-- Inter + JetBrains Mono typography
+Both themes share the taron.tech palette (blue accent `#3b82f6`, Inter + JetBrains Mono)
+and differ in layout.
+
+### `m-tier`
+
+- Centered login card on a dark grid background
 - Terminal-inspired labels and section headers
+
+### `m-tier-geo`
+
+- Two-panel layout: branded panel on the left, form on the right
+- Geometric triangle composition instead of the grid pattern
+- Underlined form fields, gradient submit button
+- Collapses to a stacked layout below 900px
+
+The left panel is built from the existing markup, so no FreeMarker templates are
+overridden: the realm display name is the headline, and the logo, subline and footer
+come from CSS pseudo-elements. Changing the subline or footer text means editing
+`m-tier-geo/login/resources/css/styles.css`.
 
 ## Theme Coverage
 
@@ -19,6 +34,9 @@ Feel free to re-use or fork this repository to style up your own Keycloak!
 | **account** | User self-service portal (profile, sessions, security) |
 | **admin** | Keycloak admin console |
 | **email** | Email templates (inherits default Keycloak templates) |
+
+Both themes ship in the same image and are selectable per realm under
+*Realm settings -> Themes* in the Keycloak admin console.
 
 ## Usage
 
