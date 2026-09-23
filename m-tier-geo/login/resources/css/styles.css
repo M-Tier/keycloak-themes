@@ -45,18 +45,18 @@ body {
     background-color: #0b111d;
     background-repeat: no-repeat;
     background-image:
-        linear-gradient(45deg, transparent 49.6%, rgba(59, 130, 246, 0.20) 50%),
-        linear-gradient(-45deg, transparent 49.6%, rgba(59, 130, 246, 0.13) 50%),
-        linear-gradient(135deg, transparent 49.6%, rgba(96, 165, 250, 0.10) 50%),
-        linear-gradient(45deg, transparent 49.6%, rgba(59, 130, 246, 0.07) 50%),
-        linear-gradient(-45deg, transparent 49.6%, rgba(230, 237, 243, 0.05) 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 780'%3E%3Cpath fill='%233b82f6' fill-opacity='.20' fill-rule='evenodd' d='M0 0H1000L500 780Z M91.44 50L500 687.35L908.56 50Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 780'%3E%3Cpath fill='%233b82f6' fill-opacity='.13' fill-rule='evenodd' d='M0 0H1000L500 780Z M91.44 50L500 687.35L908.56 50Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 780'%3E%3Cpath fill='%2360a5fa' fill-opacity='.10' fill-rule='evenodd' d='M0 0H1000L500 780Z M91.44 50L500 687.35L908.56 50Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 780'%3E%3Cpath fill='%233b82f6' fill-opacity='.07' fill-rule='evenodd' d='M0 0H1000L500 780Z M91.44 50L500 687.35L908.56 50Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 780'%3E%3Cpath fill='%23e6edf3' fill-opacity='.05' fill-rule='evenodd' d='M0 0H1000L500 780Z M91.44 50L500 687.35L908.56 50Z'/%3E%3C/svg%3E"),
         linear-gradient(160deg, #0d1117 0%, #101c31 58%, #0b111d 100%);
     background-size:
-        340px 340px,
-        220px 220px,
-        460px 460px,
-        150px 150px,
-        260px 260px,
+        340px 265px,
+        220px 172px,
+        460px 359px,
+        150px 117px,
+        260px 203px,
         100% 100%;
     background-position:
         right -90px top -60px,
@@ -73,23 +73,13 @@ body {
     top: 3.5rem;
     left: 3.5rem;
     width: 46px;
-    height: 46px;
-    background-image: url('../img/logo.png');
+    height: 36px;
+    background-image: url('../img/logo.svg');
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.95;
 }
 
-#kc-header::after {
-    content: 'taron.tech';
-    position: absolute;
-    left: 3.5rem;
-    bottom: 3rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    color: var(--content-muted);
-}
 
 /* Realm display name doubles as the panel headline. */
 #kc-header-wrapper {
@@ -302,11 +292,11 @@ a:hover {
         min-height: 260px;
         padding: 5.5rem 2rem 3rem !important;
         background-size:
-            200px 200px,
-            140px 140px,
-            260px 260px,
-            90px 90px,
-            150px 150px,
+            200px 156px,
+            140px 109px,
+            260px 203px,
+            90px 70px,
+            150px 117px,
             100% 100%;
     }
 
@@ -315,10 +305,6 @@ a:hover {
         left: 2rem;
     }
 
-    #kc-header::after {
-        left: 2rem;
-        bottom: 1.25rem;
-    }
 
     #kc-header-wrapper {
         font-size: 2rem !important;

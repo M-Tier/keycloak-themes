@@ -17,13 +17,13 @@ and differ in layout.
 ### `m-tier-geo`
 
 - Two-panel layout: branded panel on the left, form on the right
-- Geometric triangle composition instead of the grid pattern
+- Composition of inverted triangles, oriented like the taron.tech logo, instead of the grid pattern
 - Underlined form fields, gradient submit button
 - Collapses to a stacked layout below 900px
 
 The left panel is built from the existing markup, so no FreeMarker templates are
-overridden: the realm display name is the headline, and the logo, subline and footer
-come from CSS pseudo-elements. Changing the subline or footer text means editing
+overridden: the realm display name is the headline, and the logo and subline come from CSS
+pseudo-elements. Changing the subline text means editing
 `m-tier-geo/login/resources/css/styles.css`.
 
 ## Theme Coverage
